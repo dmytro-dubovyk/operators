@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "cell.h"
+#include "constructor.h"
 #include "rectangle.h"
 #include "vector_op.h"
 
@@ -25,4 +26,8 @@ int main() {
     std::cout << "\nAfter:" << std::endl;
     rec.display();
     sq.display();
+    
+   try {
+     X* p1 = new(false) X;
+   } catch(const std::exception&) { }
 }
