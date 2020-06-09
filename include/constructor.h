@@ -1,3 +1,8 @@
+#ifndef CONSTRUCTOR_H
+#define CONSTRUCTOR_H
+
+#include <iostream>
+
 struct X {
     X() { throw std::runtime_error(""); }
 
@@ -12,3 +17,4 @@ struct X {
     }
 };
 
+#endif

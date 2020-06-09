@@ -1,3 +1,7 @@
+#ifndef VECTOR_H
+#define VECTOR_H
+
+#include <iostream>
 #include <vector>
 
 template <typename T>
@@ -10,3 +14,5 @@ std::ostream& operator<<(std::ostream& os, const std::vector<T>& v) {
     os << "]\n";
     return os;
 }
+
+#endif

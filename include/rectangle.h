@@ -1,3 +1,6 @@
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
+
 #include <iostream>
 
 class Square;
@@ -25,3 +28,4 @@ void Rectangle::morph(const Square &s) {
     height = s.side;
 }
 
+#endif

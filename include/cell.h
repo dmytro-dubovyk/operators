@@ -1,17 +1,30 @@
+#ifndef CELL_H
+#define CELL_H
+
 #include <iostream>
 
 class Cell {
 public:
-    Cell(int a, int b, int c = 0) : x(a), y(b), value(c) {}
-    Cell(int v) : x(10), y(10), value(v) {}
+    Cell(int a, int b, int c = 0)
+        : x(a)
+        , y(b)
+        , value(c) {}
+    Cell(int v)
+        : x(10)
+        , y(10)
+        , value(v) {}
     Cell() = delete;
     ~Cell() = default;
 /*
     const Cell operator+(const Cell& cell) const {
-        Cell newCell(x + cell.x, y + cell.y);
+        Cell newCell(x + cell.x, y + cell.y, value + cell.value);
         return newCell;
     }
 */
+    explicit operator int() {
+        std::cout << "Custom casting Cell to int" << std::endl;
+        return value;
+    }
     friend std::ostream& operator<<(std::ostream& out, const Cell& cell);
     friend const Cell operator+(const Cell& lhs, const Cell& rhs);
 
@@ -29,3 +42,5 @@ const Cell operator+(const Cell& lhs, const Cell& rhs) {
     Cell cell(lhs.x + rhs.x, lhs.y + rhs.y, lhs.value + rhs.value);
     return cell;
 }
+
+#endif
